@@ -1,10 +1,19 @@
-function sortLowTohigh(arr) {
-return arr.sort((a, b) => a.price - b.price
-)
-}
-console.log(sortLowTohigh([
-    { id: 1, price: 50 },
-    { id: 2, price: 0},
-    { id: 3, price: 500},
+console.log('person1: shows ticket');
+console.log('person2: shows ticket');
 
-]))
+const preMovie = async () => {
+
+const promiseWifeBringingTicks = new Promise((resolve, reject) =>{
+    setTimeout(() => resolve('ticket'), 3000);
+});
+
+let ticket =  await promiseWifeBringingTicks
+
+
+return ticket
+}
+
+preMovie().then((m) => console.log(m));
+
+console.log('person4: shows ticket');
+console.log('person5: shows ticket');
