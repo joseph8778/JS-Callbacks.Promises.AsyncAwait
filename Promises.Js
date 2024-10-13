@@ -37,14 +37,32 @@ return new Promise((resolve, reject) => {
 // .then(getPosts)
 // .catch(err => console.log(err));
 
-//Async / Await
-async function init() {
-   await createPost({ title: 'Post Three', body: 'This is post three'})
 
-   getPosts();
+
+
+// //Async / Await
+// async function init() {
+//    await createPost({ title: 'Post Three', body: 'This is post three'})
+
+//    getPosts();
+// }
+
+// init()
+
+
+// Async / Await W/ FETCH
+async function fetchUsers() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+
+
+  const data = await res.json();
+
+  console.log(data)
 }
 
-init()
+fetchUsers();
+
+
 
 // const promise1 = Promise.resolve('Hello World');
 // const promise2 = 10
