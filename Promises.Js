@@ -31,13 +31,24 @@ return new Promise((resolve, reject) => {
 })
 }
 
+
+
 // createPost({ title: 'Post Three', body: 'This is post three'})
 // .then(getPosts)
 // .catch(err => console.log(err));
 
-const promise1 = Promise.resolve('Hello World');
-const promise2 = 10
-const promise3 = new Promise((resolve, reject) => setTimeout(resolve, 2000, 'Goodbye'))
-const promise4 = fetch('https://jsonplaceholder.typicode.com/todos/1').then(res => res.json()).then
+//Async / Await
+async function init() {
+   await createPost({ title: 'Post Three', body: 'This is post three'})
 
-Promise.all([promise1, promise2, promise3, promise4]).then((values) => console.log(values));
+   getPosts();
+}
+
+init()
+
+// const promise1 = Promise.resolve('Hello World');
+// const promise2 = 10
+// const promise3 = new Promise((resolve, reject) => setTimeout(resolve, 2000, 'Goodbye'))
+// const promise4 = fetch('https://jsonplaceholder.typicode.com/todos/1').then(res => res.json()).then
+
+// Promise.all([promise1, promise2, promise3, promise4]).then((values) => console.log(values));
